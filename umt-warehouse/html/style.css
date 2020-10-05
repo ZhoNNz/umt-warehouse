@@ -1,0 +1,763 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=B612+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+.container {
+    height: 100vh;
+}
+
+.contract-main {
+    position: absolute; 
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border: 3px solid rgb(0, 77, 128);
+    border-radius: 27px 27px 18px 18px;
+    width: 580px;
+    height: 850px;
+    right: 100px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    top: 15%;
+}
+
+.contract-sub {
+    position: absolute;
+    width: 93%;
+    height: 80%;
+    bottom: 14px;
+    left: 18px;
+    background-color: rgb(63, 63, 63);
+    border-radius: 12px;
+    border: 2px solid black;
+    border-radius: 40px 40px 0px 0px;
+}
+
+.contract-header {
+    text-align: center;
+}
+
+.contract-information {
+    position: absolute;
+    width: 70%;
+    height: 92%;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    top: 10%;
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgba(0, 77, 128, 0);
+
+}
+
+.contract-information-header {
+    text-align: center;
+}
+
+.property-info {
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    height: 60px;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+    top: 30px;
+    margin-top: 14px;
+}
+
+.property-cancel {
+    position: absolute;
+    background-color: rgb(31, 31, 31);
+    border-radius: 5px 0px 0px 5px;
+    width: 40%;
+    height: 35px;
+    left: 18px;
+    bottom: 15px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.property-accept {
+    position: absolute;
+    background-color: rgb(16, 121, 16);
+    border-radius: 0px 5px 5px 0px;
+    width: 55%;
+    height: 35px;
+    right: 18px;
+    bottom: 15px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.property-accept:hover {
+    background-color: rgb(24, 134, 24);
+    transition: 0.3s;
+}
+
+.property-cancel:hover {
+    background-color: rgb(54, 54, 54);
+    transition: 0.3s;
+}
+
+.dynasty8-logo {
+    position: absolute;
+    width: 140px;
+    height: 75px;
+    top: 50px;
+    left: 20px;
+}
+
+.house-picture {
+    position: absolute;
+    width: 200px;
+    height: 110px;
+    right: 170px;
+    top: 25px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+#property-cancel-text {
+    position: relative;
+    top: 9px;
+    left: 35px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 13px;   
+}
+
+#property-accept-text {
+    position: relative;
+    top: 9px;
+    left: 70px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 13px;   
+}
+
+#welcome-text {
+    float: right;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+#welcome-name {
+    color: rgb(2, 88, 2);
+}
+
+#contract-header-text {
+    position: relative;
+    top: 13px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    font-size: 24px;
+}
+
+#contract-information-text {
+    position: relative;
+    top: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+}
+
+.property-info-text {
+    position: relative;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+    margin-left: 5px;
+    top: 3px;
+}
+
+#propert-info-hr {
+    position: relative;
+    width: 30%;
+    background-color: rgb(0, 77, 128);
+    height: 4px;
+    top: 9px;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.property-info-info {
+    position: relative;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 13px;
+    margin-left: 5px;
+    top: 12px;
+}
+
+#property-totalprice {
+    color: rgb(0, 77, 128);
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+/* KEYPAD KISMI */
+body { 
+	overflow: hidden; 
+}
+
+#display {
+	position: absolute;
+	box-sizing: border-box;
+	background: #E5E5E5;
+	width: 1920px;
+	height: 1080px;
+	background-color: transparent;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+#numField {
+	fill: url(#numField_A0_Rectangle_2_pattern);
+}
+.numField {
+	position: absolute;
+	overflow: visible;
+	width: 378px;
+	height: 288px;
+	left: 67px;
+	top: 58px;
+}
+
+#keycontrols * {
+  position: fixed;
+  width: 65px;
+  height: 51px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+#key1 {
+	left: 106px;
+	top: 96px;
+}
+
+#key2 {
+	left: 181px;
+	top: 96px;
+}
+
+#key3 {
+	left: 256px;
+	top: 96px;
+}
+
+#key4 {
+	left: 106px;
+	top: 158px;
+}
+
+#key5 {
+	left: 181px;
+	top: 158px;
+}
+
+#key6 {
+	left: 256px;
+	top: 158px;
+}
+
+#key7 {
+	left: 106px;
+	top: 216px;
+}
+
+#key8{
+	left: 181px;
+	top: 216px;
+}
+
+#key9 {
+	left: 256px;
+	top: 216px;
+}
+
+#key0 {
+	left: 181px;
+	top: 276px;
+}
+
+#keyCancel {
+	right: 906px;
+	top: 96px;
+	
+	left: 350px;
+	width: 77px;
+}
+
+#keyClear {
+	right: 906px;
+	top: 158px;
+	
+	left: 350px;
+	width: 77px;
+}
+
+#keyEnter {
+	right: 906px;
+	top: 216px;
+	
+	left: 350px;
+	width: 77px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+html {
+    height: 100%;
+    width: 100%;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    /* color: #fff; */
+  }
+  p, h1, h2, h3, h4, h5, form, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  button {
+    /* background: #fff !important; */
+    color: #000 !important;
+    position: absolute;
+    left: -450px;
+    bottom: -130px;
+  }
+  #computer {
+    display: none;
+    left: 100px;
+    bottom: 150px;
+    position: absolute;
+    height: 600px;
+    width: 800px;
+    background: url('img/frame.png');
+  }
+  #screen {
+    background: url('img/background.png');
+    position: absolute;
+    height: 500px;
+    width: 700px;
+    left: -45px;
+    bottom: 42px;
+    margin: 63px 10px 10px 90px;
+    overflow-y: center;
+    overflow-x: hidden;
+  }
+  #error {
+    display: none;
+    position: absolute;
+    background: #7a2323;
+    width: 700px;
+    z-index: 100;
+    text-align: center;
+    padding: 20px;
+    bottom: 0px;
+  }
+  #error .material-icons {
+    float: center;
+    vertical-align: middle;
+  }
+  #login {
+    display: block;
+    height: 500px;
+    width: 700px;
+    text-align: center;
+    padding-top: 150px;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  #login input {
+    text-align: center;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 25px !important;
+    width: 120px !important;
+    box-sizing: border-box;
+    display: inline-block !important;
+    background: none !important;
+    border-bottom: 1px solid white !important;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  #login input:focus {
+    box-shadow: none !important;
+    background: none !important;
+  }
+  #start {
+    display: none;
+  }
+  #header {
+    display: none;
+    background: rgba(0, 0, 0, 0.2);
+    height: 40px;
+  }
+  #header img {
+    padding-left:10px;
+  }
+  #header p {
+    margin: 8px 10px 0 0;
+    float: center;
+  }
+  .block {
+    float: center;
+    margin-right: 2px;
+  }
+  .block .header {
+    padding: 8px;
+    background: #fff;
+    width: 190px;
+    height: 53px;
+  }
+  .block h1 {
+    font-size: 10px;
+    float: center;
+    position: relative;
+    color: #fff;
+    width: 100px
+  }
+  .block .material-icons {
+    float: center;
+    margin-top: 0px;
+    color: #fff;
+  }
+  
+  .block-buttons {
+    float: center;
+    margin: auto;
+    left: 280px;
+    top: 140px;
+    /* padding-top: -90px; */
+    position: absolute;
+    width: 60px;
+  }
+  .block-buttons a {
+    /* list-style: none; */
+    width: 150px;
+    height: 58px;
+    padding-top: 12px;
+    background: #000;
+    text-align: center;
+    /* display: center; */
+    position: relative;
+    margin: auto;
+    color: #fff;
+    font-size: 10px;
+    border-radius: 0px !important;
+    border-bottom: 1px solid #fff;
+  }
+  .block-buttons a:nth-last-child(1) {
+    border: none;
+  }
+  .block-buttons a:focus{
+    background-color: #3b3b3b
+
+  }
+  .block-buttons a:hover {
+    background-color: #23834c
+  }
+  .block form {
+    float: center;
+  }
+  .block .column {
+    /* display: list-item; */
+    float: center;
+    padding: 8px;
+    background: #fff;
+    width: 190px;
+    height: 40px;
+    /* list-style: none; */
+    margin: 5px 0 5px 0;
+  }
+  .block .column h1 {
+    margin-left: 10px;
+    font-size: 25px;
+  }
+  input {
+    margin: 0 !important;
+    padding: 0 0 0 5px !important;
+    height: 25px !important;
+    width: 120px !important;
+    box-sizing: border-box;
+    display: inline-block !important;
+    background: #000 !important;
+    border: none !important;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  input:focus {
+    box-shadow: none !important;
+    background: #000 !important;
+  }
+  .info {
+    overflow: hidden;
+    padding: 10px;
+    background: #000;
+    min-height: 400px;
+  }
+  .info .button {
+    background: #fff;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+    float: center;
+  }
+  .info table {
+    margin-top: 20px;
+  }
+  .info hr {
+    border: 0.5px solid;
+    margin-bottom: 30px;
+  }
+  .info h1 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .info h4 {
+    font-size: 16px;
+    color: #fff;
+  }
+  .info .material-icons {
+    float: center;
+    color: #fff;
+  }
+  .info table td:nth-child(odd) {
+    color: #fff;
+  }
+  .info ul {
+    margin-left: 15px;
+  }
+  .info input {
+    height: 42px !important;
+    width: 200px !important;
+    float: center;
+  }
+  #oyuncu-yazi-seviye {
+    position: absolute;
+    bottom: 320px;
+    color: #fff;
+  }
+  #oyuncu-level-seviye {
+    position: absolute;
+    bottom: 300px;
+    left: 0px;
+    color: #fff;
+  }
+  #twitter,
+  #telsizdus,
+  #kimliksorgula,
+  #telkonum,
+  #bankapara,
+  #lspdaktif {
+    display: none;
+  }
+  .yes {
+    color: #6ff265 !important;
+  }
+  .no {
+    color: #f16565 !important;
+  }
+  #aracmotor {
+    display: none;
+  }
+  #aracmotor thead td {
+    color: #f5e068;
+  }
+  #aracmotor tbody td {
+    color: #ffffff;
+  }
+  #kredi {
+    display: none;
+  }
+  #kredi form h1 {
+    font-size: 10px;
+    margin-bottom: -2px;
+    color: #f5e068;
+  }
+  #kredi button {
+    margin-top: 25px;
+    width: 570px;
+  }
+  #lspdtelsiz {
+    display: none;
+  }
+  #lspdtelsiz form h1 {
+    font-size: 10px;
+    margin-bottom: -2px;
+    color: #f5e068;
+  }
+  #lspdtelsiz button {
+    margin-top: 25px;
+    width: 570px;
+  }
+  .input-block {
+    display: inline-block;
+  }
+  #araba {
+    display: none;
+  }
+  #araba li {
+    margin-bottom: 10px;
+  }
+  #araba p:nth-child(even) {
+    margin-left: 20px;
+  }
+  #telsizdus input {
+    width: 498px !important;
+  }
+  #telsizdus li {
+    margin-bottom: 20px;
+  }
+  #kimliksorgula input {
+    width: 498px !important;
+  }
+  #kimliksorgula li {
+    margin-bottom: 20px;
+  }
+  #aracguc {
+    display: none;
+  }
+  #aracguc thead td {
+    color: #f5e068;
+  }
+  #aracguc tbody td {
+    color: #ffffff;
+  }
+  #gpslspd {
+    display: none;
+  }
+  #gpslspd thead td {
+    color: #f5e068;
+  }
+  #gpslspd tbody td {
+    color: #ffffff;
+  }
+  #bankapara {
+    display: none;
+  }
+  #bankapara form h1 {
+    font-size: 10px;
+    margin-bottom: -2px;
+    color: #f5e068;
+  }
+  #bankapara button {
+    margin-top: 25px;
+    width: 570px;
+  }
+  #telkonum input {
+    width: 498px !important;
+  }
+  #telkonum li {
+    margin-bottom: 20px;
+  }
+  #twitter input {
+    width: 498px !important;
+  }
+  #twitter li {
+    margin-bottom: 20px;
+  }
+  .paragraf {
+    font-weight: bold;
+    color: #f5e068;
+  }
+  #incident {
+    display: none;
+  }
+  #incident-a textarea {
+    height: 130px;
+    resize: none;
+  }
+  #incident p {
+    width: 450px !important;
+    word-break: break-all;
+  }
+  .inc-link {
+    color: #fff;
+  }
+  .button-large {
+    width: 574px;
+    text-align: center;
+    margin-bottom: 30px !important;
+  }
+  #kredi-content img {
+    width: 50px;
+    height: 50px;
+  }
+  .progress {
+    background: #ffffff !important;
+  }
+  .indeterminate {
+    background: #fff !important;
+  }
+  ::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+      background: #FF0000;
+  }
+  
+
+
+
+
+
+
+
+
