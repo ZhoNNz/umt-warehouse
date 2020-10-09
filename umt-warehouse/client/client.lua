@@ -5,14 +5,83 @@ local blips = {}
 local Knockings = {}
 local housespawn = false
 
+
+
+
+
+
+Citizen.CreateThread(function()
+    while ESX == nil do TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end) Wait(0) end
+    while ESX.GetPlayerData().job == nil do Wait(0) end
+    TriggerServerEvent('umt-warehouse:getOwned')
+
+    while OwnedHouse == nil do Wait(0) end
+
+    
+    local WareHouse = AddBlipForCoord(vector3(Config.WareHouseBB["x"], Config.WareHouseBB["y"], Config.WareHouseBB["z"]))
+    SetBlipSprite(WareHouse, 369)
+    SetBlipColour(WareHouse, 2)
+    SetBlipAsShortRange(WareHouse, true)
+    SetBlipScale(WareHouse, 0.7)
+    BeginTextCommandSetBlipName("STRING")
+    AddTextComponentString("Warehouse")
+    EndTextCommandSetBlipName(WareHouse)
+
+end)
+
+
+
+
+-- RegisterCommand('whout', function(coords)
+--     local in_house = true
+--     local player = PlayerPedId()
+--     local prop = Config.Houses[OwnedHouse.houseId]['prop']
+--     local house = EnterHouse(Config.Props[prop], coords)
+--     -- ESX.TriggerServerCallback('umt-warehouse:hasGuests', function(has)
+
+--     TriggerServerEvent('umt-warehouse:deleteInstance')
+--     in_house = false
+--     Wait(12)
+--     DeleteObject(house)
+--     print(DeleteObject(house))
+-- end)
+
+
+
+
+
+
+
 RegisterCommand('whenter', function()
     for k, v in pairs(Config.Houses) do
         if Vdist2(GetEntityCoords(PlayerPedId()), v['door']) <= 6.5 then
+            -- HelpText('Warehouse gir /enter', k)
             toggleField(true)
 
         end
     end
 end)
+
+-- Citizen.CreateThread(function()
+--     local player = PlayerPedId()
+--     local bb = {
+--         ["x"] = 500.13,
+--         ["y"] = -652.07,
+--         ["z"] = 24.91    }
+
+--     while true do
+--         Citizen.Wait(1)
+--         local distance = #(GetEntityCoords(PlayerPedId()) - vector3(Config.WareHouseBB["x"], Config.WareHouseBB["y"], Config.WareHouseBB["z"]))
+--         if distance < 3 then
+--             -- DrawText3Dplayer["x"], player["y"], player["z"]+0.1, "[E] Tedavi ol | 2.000$")
+--             DrawMarker(21, Config.WareHouseBB["x"], Config.WareHouseBB["y"], Config.WareHouseBB["z"]-0.25, vector3(0.0, 0.0, 0.0), vector3(0.0, 0.0, 0.0), vector3(0.5, 0.5, 0.5), 255, 0, 0, 150, false, true, 2, false, false, false)
+--             HelpText('[E] Warehouse Satın al', bb)
+--             if IsControlJustReleased(0, 38) then
+--                 HouseBuyMenu()
+--             end
+--         end
+--     end
+-- end)
 
 function HouseBuyMenu()
     ESX.UI.Menu.CloseAll()
@@ -40,6 +109,20 @@ function HouseBuyMenu()
 end
 
 
+
+
+-- RegisterNUICallback('buy', function()
+--     local Houses = Config.Houses
+--     for x, y in pairs(Houses) do
+--     openContract(false)
+--         if purchased == true then
+--         TriggerServerEvent('umt-warehouse:buyHouse', evNo)
+--         PlaySoundFrontend(-1, "LOOSE_MATCH", "HUD_MINI_GAME_SOUNDSET", 0)
+--         ChangePassword(evNo)
+--         purchased = false
+--         end
+--     end
+-- end)
 
 
 
@@ -216,7 +299,7 @@ function OpenGarageMenu()
     )
 end
 
--- https://discord.gg/yGzMgy
+
 
 function satilanEvler()
     if not goster then
@@ -285,9 +368,12 @@ AddEventHandler('umt-warehouse:spawnHouse', function(coords, furniture)
         SetWeatherTypeNow('EXTRASUNNY')
         SetWeatherTypeNowPersist('EXTRASUNNY')
 
+        -- DrawMarker(27, exit, vector3(0.0, 0.0, 0.0), vector3(0.0, 0.0, 0.0), vector3(1.0, 1.0, 1.0), 255, 0, 255, 150, false, false, 2, false, false, false)
+        -- DrawText3D(vector3(0.0, 0.0, 0.0), vector3(0.0, 0.0, 0.0), vector3(1.0, 1.0, 1.0), "[E] Depo")
 
         if Vdist2(GetEntityCoords(PlayerPedId()), storage) <= 9.2 then
-            DrawMarker(2, storage,vector3(0.0, 0.0, 0.0), vector3(0.0, 0.0, 0.0), vector3(1.0, 1.0, 1.0), 0.0, 0.0, 110.0, 0.55, 0.75, 0.25, 202, 0, 0, 255, false, false, 1, false, false, false, false)
+            -- DrawMarker(20, storage, vector3(0.0, 0.0, 0.0), vector3(0.0, 0.0, 0.0), vector3(1.0, 1.0, 1.0), 153, 2, 202, 150, false, false, 1, false, false, false)
+            -- DrawMarker(2, storage,vector3(0.0, 0.0, 0.0), vector3(0.0, 0.0, 0.0), vector3(1.0, 1.0, 1.0), 0.0, 0.0, 110.0, 0.55, 0.75, 0.25, 202, 0, 0, 255, false, false, 1, false, false, false, false)
             DrawText3D(storage, "[E] Depo")
 
             HelpText('[E] Depo', storage)
@@ -301,7 +387,8 @@ AddEventHandler('umt-warehouse:spawnHouse', function(coords, furniture)
         end
         if Vdist2(GetEntityCoords(PlayerPedId()), exit) <= 10 then
             HelpText('[E] - ÇIKIŞ', exit)
-            DrawMarker(2, exit,vector3(0.0, 0.0, 0.0), vector3(0.0, 0.0, 0.0), vector3(1.0, 1.0, 1.0), 0.0, 0.0, 110.0, 0.55, 0.75, 0.25, 202, 0, 0, 255, false, false, 1, false, false, false, false)
+            -- DrawMarker(22, exit, vector3(0.0, 0.0, 0.0), vector3(0.0, 0.0, 0.0), vector3(1.0, 1.0, 1.0), 165, 40, 36, 150, false, false, 1, false, false, false)
+            -- DrawMarker(2, exit,vector3(0.0, 0.0, 0.0), vector3(0.0, 0.0, 0.0), vector3(1.0, 1.0, 1.0), 0.0, 0.0, 110.0, 0.55, 0.75, 0.25, 202, 0, 0, 255, false, false, 1, false, false, false, false)
 
 
             if IsControlJustReleased(0, 38) then
@@ -490,11 +577,44 @@ RegisterNUICallback('try', function(data, cb, evNo)
 
 
 
-  ----- CONTRACT KISMI 
+  ----- CONTRACT KISMI
+
+----  if OwnedHouse.houseid == k then & diyip ev ayarlarını açtırabiliriz 
+----  else attırıp 
   local selectedHouse = nil
   local evNo = Config.Houses
   local satinalindi = false
+--   Citizen.CreateThread(function()
+--     local satinalindi = false
+--       while true do
+--         -- print(satinalindi)
+--           if not satinalindi  then
+            
+--               local pedCoords = GetEntityCoords(PlayerPedId())
+  
+--             --   for i = 1, #Config.Houses, 1 do
+--                 for k, v in pairs(Config.Houses) do
+--                   local dst = GetDistanceBetweenCoords(pedCoords, v['door'], true)
+  
+--                   if dst <= 2.5  then
+--                       -- marker çizme ve help text
+--                       HelpText('[E] - satın al',  v['door'])
+--                       DrawMarker(22, v['door'], vector3(0.0, 0.0, 0.0), vector3(0.0, 0.0, 0.0), vector3(1.0, 1.0, 1.0), 165, 40, 36, 150, false, false, 1, false, false, false)
+--                       if dst <= 1.0 and IsControlJustReleased(0, 38) then
+--                         satinalindi = true
+--                           OpenBuyMenu(evNo) -- buradaki i tablodaki pozisyon yani ev no
+--                           TriggerEvent('umt-warehouse:client:viewHouse', evNo)
+--                       end
+--                   end                
+--               end
+--               Citizen.Wait(0)
+--             else
+--               Citizen.Wait(1000)
+--           end
+--       end
+--   end)
 
+    -- end
 
 Citizen.CreateThread(function()
     local player = PlayerPedId()
@@ -523,20 +643,15 @@ AddEventHandler('umt-warehouse:faraway', function()
         Wait(0)
         if OwnedHouse.houseId == k then
             local menuopen = false
-            local birkez = false
                 local pedCoords = GetEntityCoords(PlayerPedId())
                 local dst = GetDistanceBetweenCoords(pedCoords, v['door'], true)
 
                 if dst <= 5.5 then
-                    DrawMarker(28, v['door'], vector3(0.0, 0.0, 0.0), vector3(0.0, 0.0, 0.0), vector3(1.0, 1.0, 1.0), 165, 40, 36, 150, false, false, 1, false, false, false)
-                    if dst <= 0.5 and birkez == false then
-                        exports['umt-drawtext']:drawtext('draw', '[E] EV YONETIMI')
-                        birkez = true
-                        
+                        DrawText3D(pedCoords, "[E] EV YONETIMI")
+
                         if IsControlJustReleased(0, 38) then
                             myHouse()
                             menuopen = true
-                        end
                     end
                 end
             else
@@ -544,8 +659,11 @@ AddEventHandler('umt-warehouse:faraway', function()
                 local dst = GetDistanceBetweenCoords(pedCoords, v['door'], true)
 
                 if dst <= 2.5 then
+                    -- DrawMarker(22, v['door'], vector3(0.0, 0.0, 0.0), vector3(0.0, 0.0, 0.0), vector3(1.0, 1.0, 1.0), 165, 40, 36, 150, false, false, 1, false, false, false)
                     DrawText3D(pedCoords, "[E] SATIN AL")
+                    -- if dist <= 1.0 then
                     if IsControlJustReleased(0, 38) then
+                        -- HelpText('[E] - satın al  (DENEME)',  v['door'])
                         OpenBuyMenu(evNo)
                         TriggerEvent('umt-warehouse:client:viewHouse', evNo)
                     end
@@ -575,16 +693,40 @@ end
             
             TriggerServerEvent("umt-warehouse:buyHouse", k)
             Wait(200)
-            exports['mythic_notify']:SendAlert('errr', 'Ev Yönetiminden şifrenizi oluşturunuz')
-             Wait(1200
-            satinalindi = tru
-        
+            exports['mythic_notify']:SendAlert('error', 'Ev Yönetiminden şifrenizi oluşturunuz')
+
+             Wait(1200)
+            -- SetNuiFocus(true, true)
+            -- ChangePassword(k)
+            satinalindi = true
+            
             end
         end
     end)
 
   
 
+-- purchased = false'yi evi almış olarak değerlendir
+-- purchased == true ''
+  
+-- Citizen.CreateThread(function()
+--     local player = PlayerPedId()
+--     -- local prop = Config.Houses[OwnedHouse.houseId]['prop']
+
+--     while true do
+--         Citizen.Wait(1)
+--         for k, v in pairs(Config.Houses) do
+--             if Vdist2(GetEntityCoords(PlayerPedId()), v['door']) <= 10  then
+--             HelpText('[E] - satın al', v['door'])
+--             DrawMarker(22, v['door'], vector3(0.0, 0.0, 0.0), vector3(0.0, 0.0, 0.0), vector3(1.0, 1.0, 1.0), 165, 40, 36, 150, false, false, 1, false, false, false)
+--             if IsControlJustReleased(0, 38) then
+--                 TriggerEvent('umt-warehouse:client:viewHouse')
+
+--                 end
+--             end
+--         end
+--     end
+-- end)
 
 
 
@@ -633,6 +775,7 @@ end
 
 RegisterNetEvent('umt-warehouse:client:viewHouse')
 AddEventHandler('umt-warehouse:client:viewHouse', function(houseprice, brokerfee, bankfee, taxes, firstname, lastname)
+    -- setViewCam(Config.Houses[closesthouse].coords.cam, Config.Houses[closesthouse].coords.cam.h, Config.Houses[closesthouse].coords.yaw)
     local evNo = Config.Houses
 
 
