@@ -89,20 +89,22 @@ Config = {
     vehicle = {
         "seven70"
     },
-    -- Houses = { 
-    --     [1] = {name = 'warehouse2', coords = vector3(925.8994, -2308.06, 30.509), price = 1},
-    --     [2] = {name = 'warehouse2', coords = vector3(751.3571, -1849.84, 29.291), price = 1},
-    --     [3] = {name = 'warehouse1', coords = vector3(790.4193, -2191.24, 29.551), price = 1},
-    --     [4] = {name = 'warehouse3', coords = vector3(820.7659, -2116.80, 29.357), price = 1},
-    --     [5] = {name = 'warehouse4', coords = vector3(943.0275, -1493.64, 30.093), price = 1},
-    --     [6] = {name = 'warehouse5', coords = vector3(933.6350, -1804.26, 30.722), price = 1}, -- buradaki map illeegaller için yapılmıştır
-    --     [7] = {name = 'warehouse6', coords = vector3(855.5836, -2120.39, 30.636), price = 1},
-    --     [8] = {name = 'warehouse3', coords = vector3(995.4709, -1857.17, 30.889), price = 1},
-    --     [9] = {name = 'warehouse4', coords = vector3(947.0319, -1697.73, 29.691), price = 1},
-    --     [10] = {name = 'warehouse6', coords = vector3(752.7078, -1900.92, 29.217), price = 1},
-    --     [11] = {name = 'warehouse6', coords = vector3(880.6254, -1572.12, 30.787), price = 1},
+
+    
+    Houses = { 
+        [1] = {name = 'warehouse2', coords = vector3(925.8994, -2308.06, 30.509), price = 1},
+        [2] = {name = 'warehouse2', coords = vector3(751.3571, -1849.84, 29.291), price = 1},
+        [3] = {name = 'warehouse1', coords = vector3(790.4193, -2191.24, 29.551), price = 1},
+        [4] = {name = 'warehouse3', coords = vector3(820.7659, -2116.80, 29.357), price = 1},
+        [5] = {name = 'warehouse4', coords = vector3(943.0275, -1493.64, 30.093), price = 1},
+        [6] = {name = 'warehouse5', coords = vector3(933.6350, -1804.26, 30.722), price = 1}, -- buradaki map illeegaller için yapılmıştır
+        [7] = {name = 'warehouse6', coords = vector3(855.5836, -2120.39, 30.636), price = 1},
+        [8] = {name = 'warehouse3', coords = vector3(995.4709, -1857.17, 30.889), price = 1},
+        [9] = {name = 'warehouse4', coords = vector3(947.0319, -1697.73, 29.691), price = 1},
+        [10] = {name = 'warehouse6', coords = vector3(752.7078, -1900.92, 29.217), price = 1},
+        [11] = {name = 'warehouse6', coords = vector3(880.6254, -1572.12, 30.787), price = 1},
         
-    -- },
+    },
 
     HouseSpawns = { 
         {['taken'] = false, ['coords'] = vector3(1020.0, 2000.0, -100.0)}, -- spawn #1
@@ -206,7 +208,6 @@ Strings = {
     ['Let_In'] = 'Kapıyı Çalan Kişiyi İçeri Al',
     ['Accept_Player'] = 'Let %s in?',
     ['Waiting_Owner'] = 'Waiting for the house owner to let you in.',
-    ['Buy_Furniture'] = 'enter IKEA',
     ['Buying_Furniture'] = '~INPUT_FRONTEND_LEFT~ ~INPUT_FRONTEND_RIGHT~ browse\n~INPUT_CELLPHONE_DOWN~ ~INPUT_CELLPHONE_UP~ change category (%s)\n~INPUT_FRONTEND_RDOWN~ buy %s for $%s\n~INPUT_MOVE_UP_ONLY~ ~INPUT_MOVE_DOWN_ONLY~ ~INPUT_VEH_CINEMATIC_UP_ONLY~ ~INPUT_VEH_CINEMATIC_DOWN_ONLY~ adjust camera\n~INPUT_MOVE_LEFT_ONLY~ ~INPUT_MOVE_RIGHT_ONLY~ rotate\n\n~INPUT_FRONTEND_RRIGHT~ exit',
     ['Confirm_Purchase'] = 'Buy %s for $%s?',
     ['no_money'] = "You don't have enough money.",
