@@ -4,14 +4,6 @@ Config = {
     AddBoughtHouses = false, 
     EnableGarage = false, 
     Use3DText = false, 
-
-
-    WareHouseBB = {
-        ["x"] = 500.13,
-        ["y"] = -652.07,
-        ["z"] = 24.91,
-    },
-
     
     Props = { 
         ['warehouse1'] = `shell_warehouse1`,
